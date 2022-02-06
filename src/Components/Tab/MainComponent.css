@@ -1,0 +1,21 @@
+.tabs {
+  display: flex;
+
+  border-bottom: 1px solid #D7DBDD;
+}
+
+  .tab {
+    cursor: pointer;
+    padding: 5px 30px;
+    color: #16A2D7;
+    font-size: 12px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .selectedTab {
+    border-bottom-color: #4EBBE4;
+  }
+  a{
+      text-decoration: none;
+      color : #16A2D7;
+  }

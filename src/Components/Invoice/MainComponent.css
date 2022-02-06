@@ -1,0 +1,25 @@
+.container{
+    width: 90%;
+    margin: 0 auto 0 auto;
+    direction: rtl;
+}
+.items .item-content {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0.75rem 0.625rem;
+    position: relative;
+    display: inline-flex;
+    min-width: 0;
+    word-wrap: break-word;
+    justify-content: space-between;
+    background: rgb(128 128 128 / 50%);
+    margin-bottom: 8px;
+    border-radius: 6px;
+    padding: 13px 18px;
+    width: 100%;
+    min-width: 767px;
+    transition: all 0.35s ease;
+    box-shadow: 0px 2px 4px rgb(126 142 177 / 50%);
+}
