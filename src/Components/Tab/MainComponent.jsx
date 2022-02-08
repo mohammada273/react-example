@@ -1,70 +1,47 @@
-import { useParams, Link } from "react-router-dom";
+import { useState } from "react";
 
 import "./MainComponent.css";
-import RouteClient from "../../Config/Route.json"
 
-import PrizeComponent from "./PrizeComponent"
+import PrizeComponent from "./PrizeComponent";
 import CoinHistoryComponent from "./CoinHistoryComponent";
 import Aff from "./Aff";
 
 export default function MainComponent() {
 
-  let { tabName } = useParams();
+  const [GetCondition, SetCondition] = useState();
 
   return (
     <>
       <div class="tabs">
         <ul>
-          <li className={tabName === "prize" ? "selectedTab" : ""}>
+          <li className={GetCondition === "prize" ? "selectedTab" : ""}>
             <b class="leftBorder"></b>
             <b class="rightBorder"></b>
-            <Link to={RouteClient.TabName.replace(":tabName", "prize")}>
+            <span onClick={() => SetCondition("prize")}>
               جایزه ها
-            </Link>
+            </span>
           </li>
-          <li className={tabName === "coinhistory" ? "selectedTab" : ""}>
+          <li className={GetCondition === "coinhistory" ? "selectedTab" : ""}>
             <b class="leftBorder"></b>
             <b class="rightBorder"></b>
-            <Link to={RouteClient.TabName.replace(":tabName", "coinhistory")}>
+            <span onClick={() => SetCondition("coinhistory")}>
               تاریخچه سکه
-            </Link>
+            </span>
           </li>
-          <li className={tabName === "aff" ? "selectedTab" : ""}>
+          <li className={GetCondition === "aff" ? "selectedTab" : ""}>
             <b class="leftBorder"></b>
             <b class="rightBorder"></b>
-            <Link to={RouteClient.TabName.replace(":tabName", "aff")}>
+            <span onClick={() => SetCondition("aff")}>
               معرفی دوستان
-            </Link>
+            </span>
           </li>
         </ul>
       </div>
-
-      {/* <div class="tabs">
-        <div className={tabName === "prize" ? "tab selectedTab" : "tab"}>
-          <b class="leftBorder"></b>
-          <b class="rightBorder"></b>
-          <Link to={RouteClient.TabName.replace(":tabName", "prize")}>
-            جایزه ها
-          </Link>
-        </div>
-        <div className={tabName === "coinhistory" ? "tab selectedTab" : "tab"}>
-          <b class="leftBorder"></b>
-          <b class="rightBorder"></b>
-          <Link to={RouteClient.TabName.replace(":tabName", "coinhistory")}>
-            تاریخچه سکه
-          </Link>
-        </div>
-        <div className={tabName === "aff" ? "tab selectedTab" : "tab"}>
-          <b class="leftBorder"></b>
-          <b class="rightBorder"></b>
-          <Link to={RouteClient.TabName.replace(":tabName", "aff")}>
-            معرفی دوستان
-          </Link>
-        </div>
+      <div class="container">
+        {GetCondition === "prize" ? <PrizeComponent /> : null}
+        {GetCondition === "coinhistory" ? <CoinHistoryComponent /> : null}
+        {GetCondition === "aff" ? <Aff /> : null}
       </div>
-      {tabName === "prize" ? <PrizeComponent /> : null}
-      {tabName === "coinhistory" ? <CoinHistoryComponent /> : null}
-      {tabName === "aff" ? <Aff /> : null} */}
     </>
   );
 }

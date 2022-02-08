@@ -12,7 +12,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path={TabRoute} element={<TabComponent />}>
-          <Route path=":tabName" element={<TabComponent />} />
+          {/* <Route path=":tabName" element={<TabComponent />} /> */}
         </Route>
         <Route path={InvoiceRoute} element={<InvoiceComponent />} />
       </Routes>

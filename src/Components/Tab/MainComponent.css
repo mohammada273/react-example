@@ -1,3 +1,7 @@
+.container{
+    width: 90%;
+    margin: 100px auto 0 auto;
+}
 .tabs {
   direction: rtl;
   position: fixed;
@@ -33,15 +37,12 @@
   background: #fff;
 }
 
-.tabs ul li a {
-  text-decoration: none;
-  color: #fff;
-}
-.tabs ul li a {
+.tabs ul li span {
   color: #b8b8b8;
+  cursor: pointer;
   font-weight: bold;
 }
-.tabs ul li.selectedTab a {
+.tabs ul li.selectedTab span {
   color: #38ff66;
 }
 
