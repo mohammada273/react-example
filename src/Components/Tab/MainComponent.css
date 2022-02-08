@@ -1,21 +1,95 @@
 .tabs {
+  direction: rtl;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: auto;
+  width: 100%;
+  background: #494949;
+}
+  
+.tabs ul {
   display: flex;
-
-  border-bottom: 1px solid #D7DBDD;
+  list-style-type: none;
+  margin-bottom: 0px;
 }
 
-  .tab {
-    cursor: pointer;
-    padding: 5px 30px;
-    color: #16A2D7;
-    font-size: 12px;
-    border-bottom: 2px solid transparent;
-  }
+.tabs ul li {
+  display: inline;
+  position: relative;
+  list-style: none;
+  margin: 0 40px 0 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-radius: 25px 25px 0px 0px;
+}
+.tabs ul :first-child{
+  margin-right: 50px;
+}
 
-  .selectedTab {
-    border-bottom-color: #4EBBE4;
-  }
-  a{
-      text-decoration: none;
-      color : #16A2D7;
-  }
+.tabs ul li.selectedTab {
+  background: #fff;
+}
+
+.tabs ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+.tabs ul li a {
+  color: #b8b8b8;
+  font-weight: bold;
+}
+.tabs ul li.selectedTab a {
+  color: #38ff66;
+}
+
+.tabs ul li b.leftBorder {
+  position: absolute;
+  bottom: 0px;
+  left: -30px;
+  height: 100%;
+  width: 33px;
+  background: #fff;
+  display: none;
+}
+
+.tabs ul li b.leftBorder::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 35px;
+  background: #494949;
+  padding-right: 3px;
+}
+
+.tabs ul li b.rightBorder {
+  position: absolute;
+  top: 0px;
+  right: -30px;
+  height: 100%;
+  width: 33px;
+  background: #fff;
+  display: none;
+}
+
+.tabs ul li b.rightBorder::before {
+  content: "";
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-bottom-left-radius: 35px;
+  background: #494949;
+  padding-left: 3px;
+}
+
+.tabs ul li.selectedTab b.leftBorder,
+.tabs ul li.selectedTab b.rightBorder {
+  display: block;
+}
